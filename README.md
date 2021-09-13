@@ -15,5 +15,5 @@ In order to run this application you need an account on Stream Chat [here](https
 
 The sample apps consist of two screens:
 
-* `ViewController`: Shows the list of available channels.
-* `MessageList`: Shows the selected channel view, which includes the header, message list, and message composer.
+* `DemoChannelList`: Shows the list of available channels.
+* `DemoChannelVC`: Shows the selected channel view, which includes the header, message list, and message composer.
