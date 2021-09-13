@@ -1,14 +1,10 @@
 //
-//  SceneDelegate.swift
-//  ChatDemo
-//
-//  Created by tommaso barbugli on 13/07/2021.
+// Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
-import UIKit
 import StreamChat
 import StreamChatUI
-
+import UIKit
 
 func applyChatCustomizations() {
     Appearance.default.colorPalette.background6 = .green
@@ -19,7 +15,6 @@ func applyChatCustomizations() {
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
     func scene(
@@ -84,7 +79,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-

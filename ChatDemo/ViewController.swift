@@ -1,7 +1,11 @@
+//
+// Copyright © 2021 Stream.io Inc. All rights reserved.
+//
+
+import Nuke
 import StreamChat
 import StreamChatUI
 import UIKit
-import Nuke
 
 class DemoChannelList: ChatChannelListVC {}
 
@@ -108,4 +112,3 @@ class MyAttachmentViewCatalog: AttachmentViewCatalog {
         return super.attachmentViewInjectorClassFor(message: message, components: components)
     }
 }
-
