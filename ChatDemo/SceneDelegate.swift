@@ -9,34 +9,52 @@ import UIKit
 import StreamChat
 import StreamChatUI
 
+
+func applyChatCustomizations() {
+    Appearance.default.colorPalette.background6 = .green
+    Appearance.default.images.sendArrow = UIImage(systemName: "arrowshape.turn.up.right")!
+
+    Components.default.channelVC = DemoChannelVC.self
+    Components.default.attachmentViewCatalog = MyAttachmentViewCatalog.self
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        let config = ChatClientConfig(apiKey: .init("b67pax5b2wdq"))
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let config = ChatClientConfig(apiKey: .init("API_KEY"))
-        let token =
-            Token(
-                stringLiteral: "USER_TOKEN"
-            )
+        /// user id and token for the user
+        let userId = "tutorial-droid"
+        let token: Token =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
 
-        Components.default.messageListVC = MessageList.self
-        Components.default.attachmentViewCatalog = MyAttachmentViewCatalog.self
-
-        Appearance.default.colorPalette.background6 = .green
-        Appearance.default.images.sendArrow = UIImage(systemName: "arrowshape.turn.up.right")!
+        applyChatCustomizations()
 
         /// create an instance of ChatClient and share it using the singleton
         ChatClient.shared = ChatClient(config: config)
 
         /// connect to chat
         ChatClient.shared.connectUser(
-            userInfo: UserInfo(id: "USER_ID", name: "Tutorial Droid", imageURL: URL(string: "https://bit.ly/2TIt8NR")),
+            userInfo: UserInfo(
+                id: "tutorial-droid",
+                name: "Tutorial Droid",
+                imageURL: URL(string: "https://bit.ly/2TIt8NR")
+            ),
             token: token
         )
-
-        guard let _ = (scene as? UIWindowScene) else { return }
+       
+        let channelList = DemoChannelList()
+        let query = ChannelListQuery(filter: .containMembers(userIds: [userId]))
+        channelList.controller = ChatClient.shared.channelListController(query: query)
+        
+        /// similar to embedding with a navigation controller using Storyboard
+        window?.rootViewController = UINavigationController(rootViewController: channelList)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

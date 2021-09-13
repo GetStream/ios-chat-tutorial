@@ -3,15 +3,7 @@ import StreamChatUI
 import UIKit
 import Nuke
 
-class ViewController: ChatChannelListVC {
-    override open func setUp() {
-        let query = ChannelListQuery(filter: .containMembers(userIds: [ChatClient.shared.currentUserId!]))
-
-        /// create a controller and assign it to this view controller
-        controller = ChatClient.shared.channelListController(query: query)
-        super.setUp()
-    }
-}
+class DemoChannelList: ChatChannelListVC {}
 
 class ImgurImageAttachmentView: UIView {
     var content: ChatMessageLinkAttachment? { didSet { updateContent() } }
@@ -99,7 +91,7 @@ private func hasImgurLinkAttachment(message: ChatMessage) -> Bool {
         return false
     }
 
-    guard let host = imageAttachment.assetURL.host else {
+    guard let host = imageAttachment.assetURL?.host else {
         return false
     }
 

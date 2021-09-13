@@ -8,7 +8,7 @@ class TypingIndicator: UILabel {
     }
 }
 
-class MessageList: ChatMessageListVC {
+class DemoChannelVC: ChatChannelVC {
     var typingIndicator: TypingIndicator!
 
     override func setUpLayout() {
@@ -26,7 +26,7 @@ class MessageList: ChatMessageListVC {
             typingIndicator.heightAnchor.constraint(equalToConstant: 30),
             typingIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             typingIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            listView.topAnchor.constraint(equalTo: typingIndicator.bottomAnchor)
+            messageListVC.view.topAnchor.constraint(equalTo: typingIndicator.bottomAnchor)
         ])
     }
 
