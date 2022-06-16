@@ -61,11 +61,11 @@ class ImgurImageAttachmentView: UIView {
     }
 
     func updateContent() {
-        guard let payload = content?.payload else {
+        guard let assetURL = content?.payload.assetURL else {
             return
         }
 
-        let request = ImageRequest(url: payload.assetURL)
+        let request = ImageRequest(url: assetURL)
         Nuke.loadImage(with: request, into: imagePreview)
     }
 }

@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "nuke",
+      "identity" : "difference",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kean/Nuke.git",
+      "location" : "https://github.com/krzysztofzablocki/Difference.git",
       "state" : {
-        "revision" : "0db18dd34998cca18e9a28bcee136f84518007a0",
-        "version" : "10.4.1"
+        "revision" : "02fe1111edc8318c4f8a0da96336fcbcc201f38b",
+        "version" : "1.0.1"
       }
     },
     {
-      "identity" : "starscream",
+      "identity" : "nuke",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/daltoniam/Starscream.git",
+      "location" : "https://github.com/kean/Nuke",
       "state" : {
-        "revision" : "df8d82047f6654d8e4b655d1b1525c64e1059d21",
-        "version" : "4.0.4"
+        "revision" : "7f73ceaeacd5df75a7994cd82e165ad9ff1815db",
+        "version" : "9.6.1"
       }
     },
     {
@@ -23,17 +23,26 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getstream/stream-chat-swift",
       "state" : {
-        "revision" : "2f52e94beaccfa84dd730584103afec075d9fddc",
-        "version" : "4.0.0"
+        "revision" : "28ed8614fb6c5b24aa8a2fb6ed256f91099feea9",
+        "version" : "4.16.0"
       }
     },
     {
-      "identity" : "swiftygif",
+      "identity" : "stream-chat-swift-test-helpers",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kirualex/SwiftyGif.git",
+      "location" : "https://github.com/GetStream/stream-chat-swift-test-helpers.git",
       "state" : {
-        "revision" : "0cd770feed5807d9fd4fa8df5ad74b56b814b0c8",
-        "version" : "5.4.0"
+        "revision" : "4e5c5dae3098965c13e42bcdd27a0c81542fa9eb",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swifter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/httpswift/swifter",
+      "state" : {
+        "revision" : "9483a5d459b45c3ffd059f7b55f9638e268632fd",
+        "version" : "1.5.0"
       }
     }
   ],

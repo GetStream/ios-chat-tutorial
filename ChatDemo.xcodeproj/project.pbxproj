@@ -16,6 +16,7 @@
 		43C16681269DBE7E00B3E8ED /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = 43C16680269DBE7E00B3E8ED /* StreamChat */; };
 		43C16683269DBE7E00B3E8ED /* StreamChatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 43C16682269DBE7E00B3E8ED /* StreamChatUI */; };
 		43C16685269DBECD00B3E8ED /* DemoChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C16684269DBECD00B3E8ED /* DemoChannel.swift */; };
+		4AF00881285B754200F5929C /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF00880285B754200F5929C /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF00881285B754200F5929C /* Nuke in Frameworks */,
 				43C16683269DBE7E00B3E8ED /* StreamChatUI in Frameworks */,
 				43C16681269DBE7E00B3E8ED /* StreamChat in Frameworks */,
 			);
@@ -93,6 +95,7 @@
 			packageProductDependencies = (
 				43C16680269DBE7E00B3E8ED /* StreamChat */,
 				43C16682269DBE7E00B3E8ED /* StreamChatUI */,
+				4AF00880285B754200F5929C /* Nuke */,
 			);
 			productName = ChatDemo;
 			productReference = 43C16668269DBC5F00B3E8ED /* ChatDemo.app */;
@@ -123,6 +126,7 @@
 			mainGroup = 43C1665F269DBC5F00B3E8ED;
 			packageReferences = (
 				43C1667F269DBE7E00B3E8ED /* XCRemoteSwiftPackageReference "stream-chat-swift" */,
+				4AF0087F285B754200F5929C /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 43C16669269DBC5F00B3E8ED /* Products */;
 			projectDirPath = "";
@@ -366,6 +370,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		4AF0087F285B754200F5929C /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -378,6 +390,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43C1667F269DBE7E00B3E8ED /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
 			productName = StreamChatUI;
+		};
+		4AF00880285B754200F5929C /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AF0087F285B754200F5929C /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
