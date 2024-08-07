@@ -1,14 +1,6 @@
 {
+  "originHash" : "9b4a12e299f96195693f45b1f701708ee8ca0f56de21436dc7b0755ca660b398",
   "pins" : [
-    {
-      "identity" : "difference",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/krzysztofzablocki/Difference.git",
-      "state" : {
-        "revision" : "02fe1111edc8318c4f8a0da96336fcbcc201f38b",
-        "version" : "1.0.1"
-      }
-    },
     {
       "identity" : "nuke",
       "kind" : "remoteSourceControl",
@@ -23,28 +15,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getstream/stream-chat-swift",
       "state" : {
-        "revision" : "28ed8614fb6c5b24aa8a2fb6ed256f91099feea9",
-        "version" : "4.16.0"
-      }
-    },
-    {
-      "identity" : "stream-chat-swift-test-helpers",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/GetStream/stream-chat-swift-test-helpers.git",
-      "state" : {
-        "revision" : "4e5c5dae3098965c13e42bcdd27a0c81542fa9eb",
-        "version" : "0.2.0"
-      }
-    },
-    {
-      "identity" : "swifter",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/httpswift/swifter",
-      "state" : {
-        "revision" : "9483a5d459b45c3ffd059f7b55f9638e268632fd",
-        "version" : "1.5.0"
+        "revision" : "5e71f8abcb238e385992b430c59c6e4fb415ad4a",
+        "version" : "4.61.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
