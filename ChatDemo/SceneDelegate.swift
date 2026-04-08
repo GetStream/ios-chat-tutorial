@@ -6,12 +6,14 @@ import StreamChat
 import StreamChatUI
 import UIKit
 
-func applyChatCustomizations() {
-    Appearance.default.colorPalette.background6 = .green
-    Appearance.default.images.sendArrow = UIImage(systemName: "arrowshape.turn.up.right")!
-
-    Components.default.channelVC = DemoChannelVC.self
-    Components.default.attachmentViewCatalog = MyAttachmentViewCatalog.self
+extension SceneDelegate {
+    func applyChatCustomizations() {
+        Appearance.default.colorPalette.chatBackgroundOutgoing = .green
+        Appearance.default.images.sendArrow = UIImage(systemName: "arrowshape.turn.up.right")!
+        
+        Components.default.channelVC = DemoChannelVC.self
+        Components.default.attachmentViewCatalog = MyAttachmentViewCatalog.self
+    }
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -22,12 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        let config = ChatClientConfig(apiKey: .init("b67pax5b2wdq"))
+        let config = ChatClientConfig(apiKey: .init("uun7ywwamhs9"))
 
         /// user id and token for the user
         let userId = "tutorial-droid"
         let token: Token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.WwfBzU1GZr0brt_fXnqKdKhz3oj0rbDUm2DqJO_SS5U"
 
         applyChatCustomizations()
 
@@ -37,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// connect to chat
         ChatClient.shared.connectUser(
             userInfo: UserInfo(
-                id: "tutorial-droid",
+                id: userId,
                 name: "Tutorial Droid",
                 imageURL: URL(string: "https://bit.ly/2TIt8NR")
             ),
@@ -48,8 +50,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let query = ChannelListQuery(filter: .containMembers(userIds: [userId]))
         channelList.controller = ChatClient.shared.channelListController(query: query)
         
-        /// similar to embedding with a navigation controller using Storyboard
-        window?.rootViewController = UINavigationController(rootViewController: channelList)
+        /// create the window programmatically and set the channel list as root
+        guard let windowScene = scene as? UIWindowScene else { return }
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UINavigationController(rootViewController: channelList)
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -10,7 +10,6 @@
 		43C1666C269DBC5F00B3E8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1666B269DBC5F00B3E8ED /* AppDelegate.swift */; };
 		43C1666E269DBC5F00B3E8ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1666D269DBC5F00B3E8ED /* SceneDelegate.swift */; };
 		43C16670269DBC5F00B3E8ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1666F269DBC5F00B3E8ED /* ViewController.swift */; };
-		43C16673269DBC5F00B3E8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C16671269DBC5F00B3E8ED /* Main.storyboard */; };
 		43C16675269DBC6100B3E8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C16674269DBC6100B3E8ED /* Assets.xcassets */; };
 		43C16678269DBC6100B3E8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C16676269DBC6100B3E8ED /* LaunchScreen.storyboard */; };
 		43C16681269DBE7E00B3E8ED /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = 43C16680269DBE7E00B3E8ED /* StreamChat */; };
@@ -24,7 +23,6 @@
 		43C1666B269DBC5F00B3E8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43C1666D269DBC5F00B3E8ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		43C1666F269DBC5F00B3E8ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		43C16672269DBC5F00B3E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43C16674269DBC6100B3E8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43C16677269DBC6100B3E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43C16679269DBC6100B3E8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				43C1666D269DBC5F00B3E8ED /* SceneDelegate.swift */,
 				43C1666F269DBC5F00B3E8ED /* ViewController.swift */,
 				43C16684269DBECD00B3E8ED /* DemoChannel.swift */,
-				43C16671269DBC5F00B3E8ED /* Main.storyboard */,
 				43C16674269DBC6100B3E8ED /* Assets.xcassets */,
 				43C16676269DBC6100B3E8ED /* LaunchScreen.storyboard */,
 				43C16679269DBC6100B3E8ED /* Info.plist */,
@@ -144,7 +141,6 @@
 			files = (
 				43C16678269DBC6100B3E8ED /* LaunchScreen.storyboard in Resources */,
 				43C16675269DBC6100B3E8ED /* Assets.xcassets in Resources */,
-				43C16673269DBC5F00B3E8ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,14 +161,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		43C16671269DBC5F00B3E8ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43C16672269DBC5F00B3E8ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		43C16676269DBC6100B3E8ED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -314,7 +302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = getstream.io.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -333,7 +321,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = getstream.io.ChatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -367,7 +355,7 @@
 			repositoryURL = "https://github.com/getstream/stream-chat-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = "5.0.0-beta";
 			};
 		};
 		4AF0087F285B754200F5929C /* XCRemoteSwiftPackageReference "Nuke" */ = {
@@ -375,7 +363,7 @@
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 12.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

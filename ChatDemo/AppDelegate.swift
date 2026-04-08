@@ -6,7 +6,7 @@ import StreamChat
 import UIKit
 
 extension ChatClient {
-    static var shared: ChatClient!
+    @MainActor static var shared: ChatClient!
 }
 
 @main
