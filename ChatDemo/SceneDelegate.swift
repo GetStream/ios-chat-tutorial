@@ -6,6 +6,13 @@ import StreamChat
 import StreamChatUI
 import UIKit
 
+extension ChatClient {
+    static let shared: ChatClient = {
+        let config = ChatClientConfig(apiKey: .init("uun7ywwamhs9"))
+        return ChatClient(config: config)
+    }()
+}
+
 extension SceneDelegate {
     func applyChatCustomizations() {
         Appearance.default.colorPalette.chatBackgroundOutgoing = .green
@@ -24,17 +31,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        let config = ChatClientConfig(apiKey: .init("uun7ywwamhs9"))
-
         /// user id and token for the user
         let userId = "tutorial-droid"
         let token: Token =
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.WwfBzU1GZr0brt_fXnqKdKhz3oj0rbDUm2DqJO_SS5U"
 
         applyChatCustomizations()
-
-        /// create an instance of ChatClient and share it using the singleton
-        ChatClient.shared = ChatClient(config: config)
 
         /// connect to chat
         ChatClient.shared.connectUser(

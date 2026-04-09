@@ -2,12 +2,7 @@
 // Copyright © 2021 Stream.io Inc. All rights reserved.
 //
 
-import StreamChat
 import UIKit
-
-extension ChatClient {
-    @MainActor static var shared: ChatClient!
-}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
