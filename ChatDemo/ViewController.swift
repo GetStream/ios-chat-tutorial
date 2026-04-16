@@ -10,7 +10,12 @@ import UIKit
 class DemoChannelList: ChatChannelListVC {}
 
 class ImgurImageAttachmentView: UIView {
-    var content: ChatMessageLinkAttachment? { didSet { updateContent() } }
+    var content: ChatMessageLinkAttachment? { didSet {
+        Task {
+                try await updateContent()
+            }
+        }
+    }
 
     lazy var imagePreview: UIImageView = {
         let view = UIImageView()
@@ -37,7 +42,8 @@ class ImgurImageAttachmentView: UIView {
             imagePreview.topAnchor.constraint(equalTo: topAnchor),
             imagePreview.bottomAnchor.constraint(equalTo: bottomAnchor),
             imagePreview.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imagePreview.trailingAnchor.constraint(equalTo: trailingAnchor)
+            imagePreview.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imagePreview.heightAnchor.constraint(equalToConstant: 200)
         ])
 
         let logo = UIImage(named: "imgur_logo")!
@@ -60,13 +66,13 @@ class ImgurImageAttachmentView: UIView {
         super.init(coder: coder)
     }
 
-    func updateContent() {
-        guard let assetURL = content?.payload.assetURL else {
+    func updateContent() async throws {
+        guard let url = content?.payload.assetURL else {
             return
         }
 
-        let request = ImageRequest(url: assetURL)
-        Nuke.loadImage(with: request, into: imagePreview)
+        let imageTask = ImagePipeline.shared.imageTask(with: url)
+        imagePreview.image = try await imageTask.image
     }
 }
 

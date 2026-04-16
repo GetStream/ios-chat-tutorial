@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/Nuke",
       "state" : {
-        "revision" : "7f73ceaeacd5df75a7994cd82e165ad9ff1815db",
-        "version" : "9.6.1"
+        "revision" : "83e19143355b02e9261edb2323b3e1e93287ebb9",
+        "version" : "12.9.0"
       }
     },
     {
@@ -15,8 +15,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getstream/stream-chat-swift",
       "state" : {
-        "revision" : "5e71f8abcb238e385992b430c59c6e4fb415ad4a",
-        "version" : "4.61.0"
+        "revision" : "68134ad7c05ec92f41deab031fff700870587a1d",
+        "version" : "5.0.0-beta"
+      }
+    },
+    {
+      "identity" : "stream-core-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GetStream/stream-core-swift.git",
+      "state" : {
+        "revision" : "61c57f0c18a9bfa440f19b9222029fb9c4c15dcf",
+        "version" : "0.6.2"
       }
     }
   ],
